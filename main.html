@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <style>
+        .item.highlight img {
+            width: 150px;
+            height: 150px;
+        }
+        img {
+            transition: width 1s, height 1s;
+        }
+        .item img {
+            width: 100px;
+            height: 100px;
+        }
+        .slide {
+            position: relative;
+            width: 640px;
+        }
+        .slide-image {
+            display: none;
+        }
+        .active {
+            display: inline-block;
+        }
+        .slide-button {
+            right: 0;
+            width: 30px;
+            height: 50px;
+            border: 0;
+            color: #fff;
+            opacity: 0.3;
+            background: #1d1d1d;
+            outline: none;
+        }
+        .slide-button:hover {
+            cursor: pointer;
+        }
+        .slide-button.left {
+            left: 0;
+        }
+        .slide-button.right {
+            right: 0;
+        }
+        .vertical-center {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .slide-indicators {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: 10px;
+            text-align: center;
+        }
+        .slide-indi {
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: #ffffff;
+            opacity: 0.3;
+        }
+        .white {
+            background: white;
+            opacity: 0.8;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="slide" data-imgs="3" data-active="0">
+        <img id="id-image-0" class="slide-image active" src="slideimages/1.jpg" alt="">
+        <img id="id-image-1" class="slide-image" src="slideimages/2.jpg" alt="">
+        <img id="id-image-2" class="slide-image" src="slideimages/3.jpg" alt="">
+        <button class="slide-button left vertical-center" data-offset="-1">&lt;</button>
+        <button class="slide-button right vertical-center" data-offset="1">&gt;</button>
+        <div class="slide-indicators">
+            <div id="id-indicator-0" data-index="0" class="slide-indi white"></div>
+            <div id="id-indicator-1" data-index="1" class="slide-indi"></div>
+            <div id="id-indicator-2" data-index="2" class="slide-indi"></div>
+        </div>
+    </div>
+</div>
+<script src="tool.js"></script>
+<script src="main.js"></script>
+</body>
+</html>
